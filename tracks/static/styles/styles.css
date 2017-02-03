@@ -1,0 +1,240 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #222222;
+    font-size: 16px;
+    color: #fff;
+}
+
+/*      NAV SECTION      */
+
+.nav {
+    position: fixed;
+    margin-left: 0px;
+    width: 250px;
+    height: 100%;
+    background-color: #343434;
+}
+
+.nav > ul {
+    list-style: none;
+    display: block;
+    text-align: left;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav > ul > li {
+    position: relative;
+    margin: 10px 10px;
+}
+
+.nav > ul > li > a {
+    text-decoration: none;
+}
+
+.img_sfotipy {
+    width: 50px;
+    padding-left: 47px;
+}
+
+.nav_title {
+    padding-left: 33px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.nav_title > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav_title > a:hover {
+    color: #84bd00;
+}
+
+
+.nav_description {
+    padding-left: 50px;
+}
+
+.button {
+    font-family: 'Raleway', sans-serif;
+    width: 75%;
+    height: 40px;
+    background: #222222;
+    color: #fff;
+    border: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background: #84bd00;
+    color: #222222;
+}
+
+/*      END NAV SECTION      */
+
+/*      CONTENT SECTION      */
+
+.content {
+    margin-left: 275px;
+    position: absolute;
+    width: 77%;
+}
+
+.form {
+    width: 30%
+}
+
+.form > form {
+    width: 100%;
+    text-align: center;
+}
+
+.text {
+    width: 75%;
+    margin: 5px 5px;
+}
+
+.button2 {
+    font-family: 'Raleway', sans-serif;
+    width: 60%;
+    height: 40px;
+    background: #84bd00;
+    color: #222222;
+    border: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.button2:hover {
+    background: #343434;
+    color: #84bd00;
+}
+
+.button3 {
+    font-family: 'Raleway', sans-serif;
+    width: 30%;
+    height: 40px;
+    background: #84bd00;
+    color: #222222;
+    border: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.button3:hover {
+    background: #343434;
+    color: #84bd00;
+}
+
+.btn-form-dwn {
+    text-align: center;
+}
+
+.cover {
+    height: 335px;
+    background-color: #343434;
+}
+
+.cover > a {
+    text-decoration: none;
+}
+
+.cover > a > img {
+    width: 100%;
+}
+
+a {
+    color: #fff; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #84bd00; 
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.tabla {
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+}
+
+.tabla > table {
+    width: 98%;
+    border-top: 2px solid;
+}
+
+td, th {
+    padding: 10px 10px;
+}
+
+.tr_id {
+    width: 5%
+}
+
+audio {
+    width: 100%;
+}
+
+.form2 {
+    width: 75%
+}
+
+.form2 > form {
+    width: 100%;
+    text-align: left;
+}
+
+.form2 > form > p {
+    margin: 20px 20px;
+}
+
+.form2 > form > p > select {
+    width: 50%;
+}
+
+
+
+/*      END CONTENT SECTION      */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

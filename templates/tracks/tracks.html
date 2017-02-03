@@ -1,0 +1,47 @@
+{% extends 'sfotipy/base.html' %}
+
+{% block title %}
+    Canciones
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Canciones</h1>
+
+        {% if user.is_superuser %}
+        <a href="{% url 'tracks_new' %}"><input type="submit" value="+ Agregar canción!" class="button3"/></a>
+        <br />
+        <br />
+        {% endif %}
+
+        <div class="tabla">              
+            <table>
+                <thead>
+                    <tr id="table_head">
+                        <th class="tr_id">ID</th>
+                        <th>Nombre</th>
+                        <th>Album</th>
+                        <th>Artista</th>
+                        {% if user.is_superuser %}
+                        <th>Acciones</td>
+                        {% endif %}
+                    </tr>    
+                </thead>
+
+                <tbody>
+                {% for t in tracks %}
+                    <tr id="table_body">
+                        <td>{{ t.pk }}</td>  
+                        <td><a href = "/tracks/{{ t.pk }}">{{ t.title }}</a></td>
+                        <td><a href = "/albums/{{ t.album.pk }}">{{ t.album }}</a></td>
+                        <td><a href = "/artists/{{ t.album.artist.pk }}">{{ t.album.artist }}</a></td>
+                        {% if user.is_superuser %}
+                        <td><a href="{% url 'tracks_edit' pk=t.pk %}">Editar</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'sfotipy/base.html' %}
+
+{% block title %}
+    Ingresar - Sfotipy
+{% endblock %}
+
+{% block content %}
+	<br />
+	<hr>
+	<h1>Ingresa para utilizar Sfotipy</h1>
+	<hr>
+	<br>
+    <div class="form">
+	    <h3><center>Ingresa tus credenciales</center></h3>
+	    <form method="post" onsubmit="return mensaje()">
+	        {% csrf_token %}
+	        <input type="text" placeholder="Aquí va tu usuario!" autofocus id="username" name = "username" class="text" />
+	        <input type="password" placeholder="Aquí va tu contraseña!" id="password" name = "password" class="text" />
+	        <br />
+	        <br />
+	        <input type="submit" value="Ingresar ahora!" class="button2"/>
+	    </form>
+	    <br />
+		<div class="btn-form-dwn"><a href="/signup"><strong>Aún no estoy registrado</strong></a></div>
+    </div>
+	
+{% endblock %}

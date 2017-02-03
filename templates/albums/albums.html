@@ -1,0 +1,38 @@
+{% extends 'sfotipy/base.html' %}
+
+{% block title %}
+    Albums
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1><a href="/albums">Albums</a></h1>
+
+        {% if user.is_superuser %}
+        <a href="{% url 'albums_new' %}"><input type="submit" value="+ Nuevo Album!" class="button3"/></a>
+        <br />
+        {% endif %}
+        <hr><br>
+        <div class="row">
+            {% for a in albums %}
+                <div class="col-md-3">
+                    <div class="cover">
+                        <a href = "/albums/{{ a.pk }}">
+                            <img src= {{ a.cover.url }}>
+                        </a>
+                        <center><h4><a href = "/albums/{{ a.pk }}">{{ a.title }} - {{ a.artist }}</a></h4></center>
+                        
+                        {% if user.is_superuser %}
+                        <center><h5><a href = "{% url 'albums_edit' pk=a.pk %}">Editar</a></h5></center><br>
+                        {% else %}
+                        <br>
+                        {% endif %}
+
+                    </div>
+
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

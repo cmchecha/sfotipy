@@ -1,0 +1,28 @@
+{% extends 'sfotipy/base.html' %}
+
+{% block title %}
+    {{ album }}
+{% endblock %}
+
+{% block content %}
+	
+    <div class="row">
+        <div class="col-md-4">
+            <h2><a href="{% url 'album_view' pk=album.pk %}">{{ album }}</a></h2>
+            <h4>Artista: <a href="{% url 'artist_view' pk=album.artist.pk %}">{{ album.artist }}</a></h4>
+            <br>
+            <div class="cover">
+                <a href = "{% url 'album_view' pk=album.pk %}">
+                    <img src= {{ album.cover.url }} >
+                </a>
+            </div>
+            <br>
+	        {% if user.is_superuser %}
+            <center>
+                <h4><a href = "{% url 'albums_edit' pk=album.pk %}">Editar</a></h4>
+            </center>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

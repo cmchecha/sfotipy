@@ -1,0 +1,45 @@
+{% extends 'sfotipy/base.html' %}
+
+{% block title %}
+    Artistas
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1><a href="/artists">Artistas</a></h1>
+
+        {% if user.is_superuser %}
+        <a href="{% url 'artists_new' %}"><input type="submit" value="+ Nuevo artista!" class="button3"/></a>
+        {% endif %}
+
+        <a href="/api-rest/artists"><input type="submit" value="API REST" class="button3"/></a>
+        <a href="/artists/serializer"><input type="submit" value="List serializer" class="button3"/></a>
+        <br /><br />
+        <a href="/artists/list_api"><input type="submit" value="List API" class="button3"/></a>
+        <a href="/artists/cbv_api"><input type="submit" value="CBV API" class="button3"/></a>
+        <a href="/artists/mixin_api"><input type="submit" value="MIXIN API" class="button3"/></a>
+        <br /><br />
+        <a href="/artists/generic_cbv"><input type="submit" value="GENERIC CBV" class="button3"/></a>
+        
+        <hr><br>
+        <div class="row">
+            {% for a in artists %}
+                <div class="col-md-3">
+                    <div class="cover">
+                        <a href = "/artists/{{ a.pk }}">
+                            <img src= {{ a.image.url }}>
+                        </a>
+                        <center><h4><a href = "/artists/{{ a.pk }}">{{ a }}</a></h4></center>
+                        
+                        {% if user.is_superuser %}
+                        <center>
+                            <h5><a href = "{% url 'artists_edit' pk=a.pk %}">Editar</a></h5>
+                        </center>
+                        {% endif %}
+                    </div>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

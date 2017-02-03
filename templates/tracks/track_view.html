@@ -1,0 +1,24 @@
+{% extends 'sfotipy/base.html' %}
+
+{% block title %}
+    {{ track.title }} - {{ track.album.artist }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <h1><a href="{% url 'artist_view' pk=track.album.artist.pk %}">{{ track.album.artist }}</a></h1>
+            <h3><a href="{% url 'album_view' pk=track.album.pk %}">{{ track.album }}</a></h3>
+            <h3>{{ track.title }}</h3>
+            <div class="cover">
+                <a href = "/albums/{{ track.album.pk }}">
+                    <img src= {{ track.album.cover.url }} >
+                </a>
+            </div>
+            <p><center>Escuchar:</center></p>
+            <audio id = {{ track.pk }} src='/media/{{ track.track_file }}' controls></audio>
+        </div>
+    </div>
+{% endblock %}
+
+        

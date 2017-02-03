@@ -1,0 +1,54 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <link href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/media/images/favicon.png">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    </head>
+    
+    <body>
+        
+        <nav class="nav">
+            <ul>
+                <li class="nav_title"><a href="/">SFOTIPY</a></li>
+                <li class="nav_description">Music</li>                
+
+                {% if user.is_authenticated %}
+                <li><a href="/artists"><input type="button" class="button" value="Artistas" /></a></li>
+                <li><a href = "/albums"><input type="button" class="button" value="Albums" /></a></li>
+                <li><a href="/tracks"><input type="button" class="button" value="Canciones" /></a></li>
+                <br />
+                <li>{{ user.first_name }}</li>
+                
+                {% if user.is_superuser %}
+                <li>Superuser</li>
+                <li><a href="/music_manager"><input type="button" class="button" value="Gestionar música" /></a></li>
+                <li><a href="/admin"><input type="button" class="button" value="Administración" /></a></li>
+                {% endif %}
+
+                <li><a href="/mymusic"><input type="button" class="button" value="Mi música" /></a></li>
+                <li><a href="/profile/{{ user.pk }}"><input type="button" class="button" value="Mi perfil" /></a></li>
+                <li><a href="/logout"><input type="button" class="button" value="Cerrar sesión" /></a></li>
+                {% else %}
+                <li><a href="/login"><input type="button" class="button" value="Iniciar sesión" /></a></li>
+                <li><a href="/signup"><input type="button" class="button" value="Regístrate" /></a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+        
+        <section class="content">
+            {% block content %}
+            {% endblock %}
+        </section>
+        
+    </body>
+    
+</html>
